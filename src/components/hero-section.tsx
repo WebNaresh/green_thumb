@@ -32,7 +32,7 @@ export function HeroSection() {
           </video>
         ) : (
           <div className="absolute top-0 left-0 w-full h-full bg-gray-300 flex items-center justify-center">
-          <Image src="/hero.jpg" alt="Hero Image" layout="fill" objectFit="cover" />
+          <Image src="/img/hero.png" alt="Hero Image" layout="fill" objectFit="cover" />
           </div>
         )}
         <div className="absolute inset-0 bg-black opacity-50"></div>
