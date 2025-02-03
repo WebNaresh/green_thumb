@@ -3,11 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ChevronRight, Droplet, Leaf, Users } from "lucide-react";
-import { useState } from "react";
 
 export function VideoSection() {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   const projectItems = [
     {
       icon: Droplet,
