@@ -17,15 +17,15 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="sticky flex justify-center top-0 z-50   border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center px-2 md:px-16 justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold text-green-600">
-            🌱 Green Thumb
+            🌱 Green Thumb Foundation
           </span>
         </Link>
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-            {["Home", "About", "Project", "Media", "Contact"].map((item) => (
+            {["Home", "About", "Project","Green-warrior", "Media", "Contact"].map((item) => (
               <NavigationMenuItem key={item} className="cursor-pointer">
                 <Link
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -58,7 +58,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-8">
-                {["Home", "About", "Project", "Media", "Contact"].map(
+                {["Home", "About", "Project","Green-warrior", "Media", "Contact"].map(
                   (item) => (
                     <Link
                       key={item}

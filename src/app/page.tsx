@@ -15,7 +15,7 @@ export default function Home() {
       <ImpactComparison />
       <StatsSection />
       <ColonelPatilSection />
-      <CollaborationSection />
+      {/* <CollaborationSection /> */}
       <TrusteesSection />
       <TestimonialSection />
     </>

@@ -101,7 +101,7 @@ export function ImpactComparison() {
   return (
     <section
       ref={ref}
-      className="py-16 bg-gradient-to-b from-white to-gray-50"
+      className="py-16 px-8 bg-gradient-to-b from-white to-gray-50"
       id="impact-section"
     >
       <div className="container mx-auto px-4">
