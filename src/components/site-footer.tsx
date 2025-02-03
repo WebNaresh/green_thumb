@@ -76,15 +76,17 @@ export function SiteFooter() {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2" />
-                <span>123 Green Street, Pune, India</span>
+                <span>
+                  Green Thumb, 4 Nehru Marg, Ghorpadi, Cantonment, Pune 411001
+                </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2" />
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+919371202575"
                   className="hover:text-white transition-colors"
                 >
-                  +91 123 456 7890
+                  9371202575
                 </a>
               </li>
               <li className="flex items-center">
