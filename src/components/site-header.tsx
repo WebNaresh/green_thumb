@@ -58,23 +58,18 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-8">
-                {[
-                  "Home",
-                  "About",
-                  "Services",
-                  "Project",
-                  "Media",
-                  "Contact",
-                ].map((item) => (
-                  <Link
-                    key={item}
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="text-lg font-medium text-gray-600 hover:text-green-600"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item}
-                  </Link>
-                ))}
+                {["Home", "About", "Project", "Media", "Contact"].map(
+                  (item) => (
+                    <Link
+                      key={item}
+                      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                      className="text-lg font-medium text-gray-600 hover:text-green-600"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item}
+                    </Link>
+                  )
+                )}
                 <Button
                   className="mt-4 bg-green-600 hover:bg-green-700"
                   onClick={() => setIsOpen(false)}

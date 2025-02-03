@@ -32,7 +32,7 @@ const projectImages = [
 
 export function ProjectGallery() {
   return (
-    <section className="py-16 flex justify-center bg-gray-50">
+    <section className="py-16 px-12 flex justify-center bg-gray-50">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

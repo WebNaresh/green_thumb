@@ -12,7 +12,7 @@ import { VisionSection } from "./vision-section";
 export function AboutContent() {
   return (
     <div className="min-h-screen flex justify-center bg-gradient-to-b from-green-50 to-white">
-      <div className="container py-12">
+      <div className="container px-12 py-12">
         <motion.h1
           className="text-4xl font-bold text-center text-gray-800 mb-8"
           initial={{ opacity: 0, y: -20 }}
