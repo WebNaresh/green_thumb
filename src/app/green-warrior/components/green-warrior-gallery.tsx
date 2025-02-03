@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+
 import { motion } from "framer-motion"
 import Image from "next/image"
 import {
@@ -70,7 +70,7 @@ const bookletImages = [
 ]
 
 export function GreenWarriorGallery() {
-  const [selectedImage, setSelectedImage] = useState(null)
+
 
   return (
     <div className="min-h-screen bg-green-50 py-12">

@@ -1,4 +1,4 @@
-import { CollaborationSection } from "@/components/collaboration-section";
+
 import { ColonelPatilSection } from "@/components/colonel-patil-section";
 import { HeroSection } from "@/components/hero-section";
 import { ImpactComparison } from "@/components/impact-comparison";
