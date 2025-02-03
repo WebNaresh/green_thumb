@@ -1,0 +1,91 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+
+export function SiteHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <header className="sticky flex justify-center top-0 z-50   border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <div className="container flex h-16 items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2">
+          <span className="text-xl font-bold text-green-600">
+            🌱 Green Thumb
+          </span>
+        </Link>
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+            {["Home", "About", "Project", "Media", "Contact"].map((item) => (
+              <NavigationMenuItem key={item} className="cursor-pointer">
+                <Link
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {item}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <div className="flex items-center space-x-4">
+          <Button className="hidden md:inline-flex bg-green-600 hover:bg-green-700">
+            Contact us
+          </Button>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="md:hidden"
+                onClick={() => setIsOpen(true)}
+              >
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col space-y-4 mt-8">
+                {[
+                  "Home",
+                  "About",
+                  "Services",
+                  "Project",
+                  "Media",
+                  "Contact",
+                ].map((item) => (
+                  <Link
+                    key={item}
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    className="text-lg font-medium text-gray-600 hover:text-green-600"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                ))}
+                <Button
+                  className="mt-4 bg-green-600 hover:bg-green-700"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact us
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
+}
