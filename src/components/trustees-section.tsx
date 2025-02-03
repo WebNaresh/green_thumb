@@ -37,7 +37,7 @@ const trustees = [
 
 export function TrusteesSection() {
   return (
-    <section className="py-16 bg-gradient-to-b from-green-50 to-white flex justify-center">
+    <section className="py-16 px-8 bg-gradient-to-b from-green-50 to-white flex justify-center">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

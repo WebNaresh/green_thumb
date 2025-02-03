@@ -8,7 +8,7 @@ import Image from "next/image";
 export function CollaborationSection() {
   return (
     <section
-      className="bg-green-50 py-12 flex justify-center"
+      className="bg-green-50 py-12 px-8 flex justify-center"
       id="collaboration-section"
     >
       <div className="container">

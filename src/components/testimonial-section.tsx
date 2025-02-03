@@ -71,10 +71,10 @@ export function TestimonialSection() {
 
   return (
     <section
-      className="py-16 bg-gradient-to-b from-gray-50 flex justify-center to-white"
+      className="py-16 px-8 bg-gradient-to-b from-gray-50 flex justify-center to-white"
       id="testimonial-section"
     >
-      <div className="container">
+      <div className="container px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}

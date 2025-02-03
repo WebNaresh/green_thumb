@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function VideoSection() {
   return (
     <section className="py-16 bg-gray-50 flex justify-center">
-      <div className="container">
+      <div className="container px-8">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
