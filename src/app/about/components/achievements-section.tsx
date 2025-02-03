@@ -26,7 +26,8 @@ export function AchievementsSection() {
           <Droplet className="h-12 w-12 text-blue-500 mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">Increased Capacity</h3>
           <p className="text-gray-600">
-            Significant increase in Khadakwasla Dam's water storage capacity
+            Significant increase in Khadakwasla Dam&apos;s water storage
+            capacity
           </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-lg text-center">

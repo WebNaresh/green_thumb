@@ -1,11 +1,15 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function HeroSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const video = document.querySelector("video");
@@ -19,13 +23,21 @@ export function HeroSection() {
     };
   }, []);
 
+  const handlePlayVideo = () => {
+    setIsPlaying(true);
+    const video = document.querySelector("video");
+    if (video) {
+      video.play();
+    }
+  };
+
   return (
     <section className="relative h-screen max-h-[800px] overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         {isVideoLoaded ? (
           <video
-            autoPlay
+            autoPlay={isPlaying}
             loop
             muted
             playsInline
@@ -44,26 +56,25 @@ export function HeroSection() {
             />
           </div>
         )}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full container mx-auto px-4 md:px-8">
-        <div className="flex h-full flex-col justify-center items-start max-w-xl text-white">
+      <div className="relative z-10 h-full container mx-auto px-4 md:px-8 flex items-center">
+        <div className="max-w-2xl">
           <motion.div
-            className="space-y-4"
+            className="space-y-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h2 className="text-white font-semibold text-lg md:text-xl uppercase tracking-wider">
+            <h2 className="text-yellow-400 font-semibold text-lg md:text-xl uppercase tracking-wider">
               Urgent: Pune&apos;s Water Security at Risk
             </h2>
-            <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-              Khadakwasla Dam: 80% Filled with Silt, Pune&apos;s Water Future in
-              Danger
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              Khadakwasla Dam: 80% Filled with Silt
             </h1>
-            <p className="text-lg sm:text-xl text-green-50">
+            <p className="text-lg sm:text-xl text-gray-200">
               Every day we wait, Pune moves closer to a water crisis. The
               Khadakwasla Dam, our city&apos;s lifeline, is crying for help.
               Desilting isn&apos;t just an option – it&apos;s our responsibility
@@ -71,26 +82,50 @@ export function HeroSection() {
             </p>
           </motion.div>
           <motion.div
-            className="flex flex-wrap gap-4 mt-8"
+            className="mt-8 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-          ></motion.div>
-          <motion.div
-            className="mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <a
-              href="#donate"
-              className="inline-block bg-yellow-500 text-green-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors"
+            <Button
+              asChild
+              size="lg"
+              className="bg-yellow-500 text-green-800 hover:bg-yellow-400 transition-colors"
             >
-              Donate Now
-            </a>
+              <Link href="#donate">
+                Donate Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-white border-white bg-green-700"
+              onClick={handlePlayVideo}
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Watch Video
+            </Button>
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.8,
+          duration: 0.5,
+          repeat: Number.POSITIVE_INFINITY,
+          repeatType: "reverse",
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+        </div>
+      </motion.div>
     </section>
   );
 }
