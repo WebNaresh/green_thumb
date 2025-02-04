@@ -50,11 +50,11 @@ export function DonateContent() {
           <Image
             src="/project/khadakwasla/khadakwasla_1 (3).jpg"
             alt="Panoramic view of Khadakwasla Dam"
-            width={800}
+            width={1200}
             height={400}
-            className="w-full h-72 object-fill"
+            className="w-full h-64 object-fill"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <h1 className="text-4xl font-bold text-white text-center px-4">
               Support Our Mission to Restore Khadakwasla Dam
             </h1>
@@ -73,7 +73,7 @@ export function DonateContent() {
             </h2>
             <p className="text-gray-600">
               Every contribution, no matter the size, brings us closer to
-              securing Pune&apos;s water future. Your support helps fund crucial
+              securing Pune's water future. Your support helps fund crucial
               desilting operations, afforestation efforts, and community
               engagement programs.
             </p>
@@ -149,11 +149,25 @@ export function DonateContent() {
                 Other Ways to Donate
               </h3>
               <div>
-                <h4 className="font-semibold">Bank Transfer</h4>
-                <p>Account Name: Green Thumb Foundation</p>
-                <p>Account Number: 1234567890</p>
-                <p>IFSC Code: ABCD0123456</p>
-                <p>Bank Name: XYZ Bank, Pune Branch</p>
+                <h4 className="font-semibold text-lg mb-2">Bank Transfer</h4>
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <p className="mb-2">
+                    <span className="font-medium">Account Name:</span> Green
+                    Thumb Foundation
+                  </p>
+                  <p className="mb-2">
+                    <span className="font-medium">Account Number:</span>{" "}
+                    050010110011240
+                  </p>
+                  <p className="mb-2">
+                    <span className="font-medium">IFSC Code:</span> B.K.I.D.
+                    0000500
+                  </p>
+                  <p>
+                    <span className="font-medium">Bank Name:</span> Bank of
+                    India, Pune Camp Branch
+                  </p>
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold">Scan to Pay</h4>
@@ -182,24 +196,9 @@ export function DonateContent() {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             Your generosity today paves the way for a sustainable tomorrow. Join
-            us in our mission to restore Khadakwasla Dam and secure Pune&apos;s
-            water future for generations to come.
+            us in our mission to restore Khadakwasla Dam and secure Pune's water
+            future for generations to come.
           </p>
-          <p className="text-lg text-gray-600 mb-4">
-            Your support helps us continue our mission to restore Khadakwasla
-            Dam and ensure Pune&apos;s water security.
-          </p>
-          <p className="text-sm text-gray-500">
-            By clicking &quot;Donate Now&quot;, you agree to our terms and
-            conditions.
-          </p>
-          {/* <Image
-            src="/images/before-after-dam.jpg"
-            alt="Before and after images of Khadakwasla Dam restoration efforts"
-            width={800}
-            height={400}
-            className="rounded-xl shadow-lg mx-auto"
-          /> */}
         </motion.div>
       </div>
     </div>
