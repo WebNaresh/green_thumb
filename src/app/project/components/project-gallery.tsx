@@ -6,27 +6,28 @@ import Image from "next/image";
 
 const projectImages = [
   {
+    src: "/project/khadakwasla/khadakwasla_1 (1).jpg",
     alt: "Khadakwasla Dam front view",
   },
   {
-    src: "/placeholder.svg",
-    alt: "Khadakwasla Dam aerial view",
-  },
-  {
-    src: "/placeholder.svg",
+    src: "/project/khadakwasla/khadakwasla_1 (2).jpg",
     alt: "Khadakwasla Dam side view",
   },
   {
-    src: "/placeholder.svg",
-    alt: "Khadakwasla Dam water release",
+    src: "/project/khadakwasla/khadakwasla_1 (3).jpg",
+    alt: "Khadakwasla Dam aerial view",
   },
   {
-    src: "/placeholder.svg",
-    alt: "Khadakwasla Dam gates",
+    src: "/project/khadakwasla/khadakwasla_1 (4).jpg",
+    alt: "Khadakwasla Dam project team",
   },
   {
-    src: "/placeholder.svg",
-    alt: "Khadakwasla Dam spillway",
+    src: "/project/khadakwasla/khadakwasla_1 (5).jpg",
+    alt: "Khadakwasla Dam project team",
+  },
+  {
+    src: "/project/khadakwasla/khadakwasla_1 (6).jpg",
+    alt: "Khadakwasla Dam project team",
   },
 ];
 

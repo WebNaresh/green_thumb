@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -19,13 +20,19 @@ export function SiteHeader() {
   const pathname = usePathname();
   return (
     <header
-      className="sticky flex justify-center top-0 z-50   border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+      className="sticky flex justify-center top-0 z-50   border-b bg-white"
       aria-label="Main navigation"
     >
       <div className="container flex h-16 items-center px-2 md:px-16 justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-green-600">
-            🌱 Green Thumb Foundation
+          <Image
+            src="/logo.png"
+            alt="Green Thumb logo"
+            width={40}
+            height={40}
+          />
+          <span className="font-bold flex items-center justify-center">
+            Green Thumb Foundation
           </span>
         </Link>
         <NavigationMenu className="hidden md:flex">
