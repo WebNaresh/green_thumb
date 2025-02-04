@@ -94,7 +94,7 @@ export function SiteFooter() {
                     href="tel:+919371202575"
                     className="hover:text-white transition-colors"
                   >
-                    +91 9371202575
+                    +91 9371202875
                   </a>
                 </li>
                 <li className="flex items-center">
@@ -103,7 +103,7 @@ export function SiteFooter() {
                     href="mailto:info@greenthumb.org"
                     className="hover:text-white transition-colors"
                   >
-                    info@greenthumb.org
+                    greenthumbfoundation1@gmail.com
                   </a>
                 </li>
               </ul>

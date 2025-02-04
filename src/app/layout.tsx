@@ -1,6 +1,8 @@
+import { DonateButton } from "@/components/donate-button";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { WhatsappButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react"; // Import React
@@ -72,6 +74,8 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <WhatsappButton />
+        <DonateButton />
       </body>
     </html>
   );

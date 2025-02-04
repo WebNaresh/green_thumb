@@ -86,7 +86,7 @@ export function VideoSection() {
               restoration, and community engagement.
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="md:grid gap-4 sm:grid-cols-3 hidden">
               {projectItems.map((item, index) => (
                 <motion.div
                   key={item.title}

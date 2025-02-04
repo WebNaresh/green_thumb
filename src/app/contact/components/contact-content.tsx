@@ -46,11 +46,11 @@ export function ContactContent() {
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <Phone className="h-5 w-5 text-green-600" />
-                <span>+91 9371202575</span>
+                <span>+91 9371202875</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <Mail className="h-5 w-5 text-green-600" />
-                <span>info@greenthumb.org</span>
+                <span> greenthumbfoundation1@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <Clock className="h-5 w-5 text-green-600" />
