@@ -1,5 +1,6 @@
 import { DonateButton } from "@/components/donate-button";
-import { GoogleAnalytics } from "@/components/google-analytics";
+
+import GoogleAnalytics from "@/components/google-analytics";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsappButton } from "@/components/whatsapp-button";
@@ -70,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <GoogleAnalytics />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-3WY2LNX9EH" />
         <SiteHeader />
         {children}
         <SiteFooter />
