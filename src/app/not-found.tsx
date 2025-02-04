@@ -35,8 +35,8 @@ export default function NotFound() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          It seems we couldn't find the page you're looking for. Don't worry,
-          even in nature, sometimes we lose our way!
+          It seems we couldn&apos;t find the page you&apos;re looking for.
+          Don&apos;t worry, even in nature, sometimes we lose our way!
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4"

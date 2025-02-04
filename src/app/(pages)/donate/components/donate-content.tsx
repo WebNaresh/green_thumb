@@ -73,7 +73,7 @@ export function DonateContent() {
             </h2>
             <p className="text-gray-600">
               Every contribution, no matter the size, brings us closer to
-              securing Pune's water future. Your support helps fund crucial
+              securing Pune&apos;s water future. Your support helps fund crucial
               desilting operations, afforestation efforts, and community
               engagement programs.
             </p>
@@ -182,8 +182,16 @@ export function DonateContent() {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             Your generosity today paves the way for a sustainable tomorrow. Join
-            us in our mission to restore Khadakwasla Dam and secure Pune's water
-            future for generations to come.
+            us in our mission to restore Khadakwasla Dam and secure Pune&apos;s
+            water future for generations to come.
+          </p>
+          <p className="text-lg text-gray-600 mb-4">
+            Your support helps us continue our mission to restore Khadakwasla
+            Dam and ensure Pune&apos;s water security.
+          </p>
+          <p className="text-sm text-gray-500">
+            By clicking &quot;Donate Now&quot;, you agree to our terms and
+            conditions.
           </p>
           {/* <Image
             src="/images/before-after-dam.jpg"
