@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -36,12 +36,25 @@ const testimonials = [
 export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const nextTestimonial = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  }, []);
+
+  const prevTestimonial = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+        } else {
+          setIsVisible(false);
         }
       },
       { threshold: 0.1 }
@@ -59,22 +72,32 @@ export function TestimonialSection() {
     };
   }, []);
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
+  useEffect(() => {
+    if (isVisible && !isPaused) {
+      const intervalId = setInterval(nextTestimonial, 5000);
+      return () => clearInterval(intervalId);
+    }
+  }, [isVisible, isPaused, nextTestimonial]);
 
-  const prevTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
-    );
-  };
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        prevTestimonial();
+      } else if (event.key === "ArrowRight") {
+        nextTestimonial();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [nextTestimonial, prevTestimonial]);
 
   return (
     <section
-      className="py-16 px-8 bg-gradient-to-b from-gray-50 flex justify-center to-white"
+      className="py-16 px-8 bg-gradient-to-b from-gray-50 to-white"
       id="testimonial-section"
     >
-      <div className="container px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -89,7 +112,11 @@ export function TestimonialSection() {
           </p>
         </motion.div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -99,16 +126,19 @@ export function TestimonialSection() {
               transition={{ duration: 0.5 }}
               className="bg-white rounded-xl shadow-lg p-8 md:p-12"
             >
-              <Quote className="text-green-500 w-12 h-12 mb-6" />
+              <Quote
+                className="text-green-500 w-12 h-12 mb-6"
+                aria-hidden="true"
+              />
               <blockquote className="text-xl md:text-2xl text-gray-700 mb-6">
                 &quot;{testimonials[currentIndex].quote}&quot;
               </blockquote>
               <div className="flex items-center justify-center md:justify-start">
                 <Image
                   src={testimonials[currentIndex].image || "/placeholder.svg"}
-                  alt={testimonials[currentIndex].name}
-                  width={100}
-                  height={100}
+                  alt=""
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div className="text-left">
