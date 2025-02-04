@@ -13,10 +13,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 142.1 76.2% 36.3%;
+    --primary: 142 69% 58%; /* green-500 */
     --primary-foreground: 355.7 100% 97.3%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 45 93% 47%; /* yellow-500 */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -30,7 +30,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142.1 76.2% 36.3%;
+    --ring: 142 69% 58%;
 
     --radius: 0.5rem;
   }
@@ -45,10 +45,10 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142.1 70.6% 45.3%;
+    --primary: 142 76% 36%; /* green-600 */
     --primary-foreground: 144.9 80.4% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 45 93% 47%; /* yellow-600 */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -62,7 +62,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 142.4 71.8% 29.2%;
+    --ring: 142 76% 36%;
   }
 }
 
@@ -73,4 +73,31 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Responsive styles for WhatsApp and Donate buttons */
+@media (max-width: 640px) {
+  .fixed.bottom-4 {
+    bottom: 1rem;
+  }
+  .fixed.left-4 {
+    left: 1rem;
+  }
+  .fixed.right-4 {
+    right: 1rem;
+  }
+}
+
+/* Responsive video container */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.aspect-w-16 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

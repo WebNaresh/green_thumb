@@ -31,7 +31,7 @@ export function SiteHeader() {
             width={40}
             height={40}
           />
-          <span className="font-bold flex items-center justify-center">
+          <span className="font-bold flex items-center justify-center text">
             Green Thumb Foundation
           </span>
         </Link>
@@ -42,6 +42,7 @@ export function SiteHeader() {
               "About",
               "Project",
               "Green-warrior",
+              "Suresh-Patil",
               "Media",
               "Donate",
               "Contact",
@@ -93,6 +94,7 @@ export function SiteHeader() {
                   "About",
                   "Project",
                   "Green-warrior",
+                  "Suresh Patil",
                   "Media",
                   "Donate",
                   "Contact",
