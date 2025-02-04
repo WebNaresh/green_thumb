@@ -94,7 +94,7 @@ export function SiteHeader() {
                   "About",
                   "Project",
                   "Green-warrior",
-                  "Suresh Patil",
+                  "Suresh-Patil",
                   "Media",
                   "Donate",
                   "Contact",
