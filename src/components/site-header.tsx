@@ -56,7 +56,7 @@ export function SiteHeader() {
                     className={`${navigationMenuTriggerStyle()} ${
                       pathname ===
                       (item === "Home" ? "/" : `/${item.toLowerCase()}`)
-                        ? "text-green-600 font-semibold"
+                        ? "text-gray-300 bg-green-600 font-semibold"
                         : ""
                     } transition-colors duration-200`}
                   >
