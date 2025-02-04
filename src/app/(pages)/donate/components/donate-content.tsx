@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { motion } from "framer-motion";
-import { Droplet, Heart, Users } from "lucide-react";
+import { Copy, Droplet, Heart, Users } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -18,6 +18,11 @@ export function DonateContent() {
 
   const handleCustomDonation = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDonationAmount(e.target.value);
+  };
+
+  const handleCopyDetail = (detail: string) => {
+    navigator.clipboard.writeText(detail);
+    alert(`${detail} copied to clipboard!`);
   };
 
   const impactItems = [
@@ -151,21 +156,50 @@ export function DonateContent() {
               <div>
                 <h4 className="font-semibold text-lg mb-2">Bank Transfer</h4>
                 <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                  <p className="mb-2">
+                  <p className="mb-2 flex justify-between items-center">
                     <span className="font-medium">Account Name:</span> Green
                     Thumb Foundation
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleCopyDetail("Green Thumb Foundation")}
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
                   </p>
-                  <p className="mb-2">
+                  <p className="mb-2 flex justify-between items-center">
                     <span className="font-medium">Account Number:</span>{" "}
                     050010110011240
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleCopyDetail("050010110011240")}
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
                   </p>
-                  <p className="mb-2">
-                    <span className="font-medium">IFSC Code:</span> B.K.I.D.
-                    0000500
+                  <p className="mb-2 flex justify-between items-center">
+                    <span className="font-medium">IFSC Code:</span> BKID0000500
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleCopyDetail("BKID0000500")}
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
                   </p>
-                  <p>
+                  <p className="flex justify-between items-center">
                     <span className="font-medium">Bank Name:</span> Bank of
                     India, Pune Camp Branch
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() =>
+                        handleCopyDetail("Bank of India, Pune Camp Branch")
+                      }
+                    >
+                      <Copy className="h-4 w-4" />
+                    </Button>
                   </p>
                 </div>
               </div>
