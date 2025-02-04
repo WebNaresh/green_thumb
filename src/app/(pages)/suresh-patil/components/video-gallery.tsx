@@ -21,6 +21,20 @@ const videos = [
     thumbnail: "/images/video-thumbnail-3.jpg",
     youtubeId: "lnw0avOuai4",
   },
+  {
+    id: "video4",
+    title:
+      "खडकवासला डॅम पुनर्भरण | कर्नल सुरेश पाटील | पर्यावरण | Khadakwasla Dam Refill | Colonel Suresh Pati",
+    thumbnail: "/images/video-thumbnail-3.jpg",
+    youtubeId: "uBqBqLKGe_w",
+  },
+  {
+    id: "video5",
+    title:
+      "L.C. Suresh Patil | भारत-पाकिस्तान युद्धाचा किस्सा - अजूनही लढत आहोत, पर्यावरण दिनाचे विचार",
+    thumbnail: "/images/video-thumbnail-3.jpg",
+    youtubeId: "DNB4FxkjACk",
+  },
 ];
 
 export function VideoGallery() {
