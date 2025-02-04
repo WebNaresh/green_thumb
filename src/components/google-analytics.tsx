@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 
 declare global {
   interface Window {
@@ -47,3 +47,11 @@ export const GoogleAnalytics = ({
     </>
   );
 };
+
+export default function GoogleAnalyticsWrapper() {
+  return (
+    <Suspense fallback={null}>
+      <GoogleAnalytics />
+    </Suspense>
+  );
+}
