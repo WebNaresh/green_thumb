@@ -9,13 +9,13 @@ import { useEffect, useState } from "react";
 const stats = [
   {
     icon: Droplet,
-    value: 2500000,
+    value: 250000000,
     label: "Liters of Water Saved",
     color: "blue",
   },
   {
     icon: Leaf,
-    value: 1200,
+    value: 2500000,
     label: "Trees Planted",
     color: "green",
   },
