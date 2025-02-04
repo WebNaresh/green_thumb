@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import type { Metadata } from "next";
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <GoogleAnalytics />
         <SiteHeader />
         {children}
         <SiteFooter />
