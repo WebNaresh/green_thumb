@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { AlertTriangle, Calendar, Clock, Droplets } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
 const timelineItems = [
@@ -175,19 +176,23 @@ export function ImpactComparison() {
             in the area.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 transform hover:scale-105 transition-transform"
-            >
-              Donate Now
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-green-600 text-green-600 hover:bg-green-50"
-            >
-              Learn More About Timeline
-            </Button>
+            <Link href="/donate">
+              <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 transform hover:scale-105 transition-transform"
+              >
+                Donate Now
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+              >
+                Learn More About Timeline
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -92,7 +92,7 @@ export function HeroSection() {
               size="lg"
               className="bg-yellow-500 text-green-800 hover:bg-yellow-400 transition-colors"
             >
-              <Link href="#donate">
+              <Link href="/donate">
                 Donate Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

@@ -43,6 +43,7 @@ export function SiteHeader() {
               "Project",
               "Green-warrior",
               "Media",
+              "Donate",
               "Contact",
             ].map((item) => (
               <NavigationMenuItem key={item} className="cursor-pointer">
@@ -93,6 +94,7 @@ export function SiteHeader() {
                   "Project",
                   "Green-warrior",
                   "Media",
+                  "Donate",
                   "Contact",
                 ].map((item) => (
                   <Link
