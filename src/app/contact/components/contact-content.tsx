@@ -28,9 +28,9 @@ export function ContactContent() {
               Get in Touch
             </h2>
             <p className="text-gray-600">
-              We'd love to hear from you. Whether you have a question about our
-              projects, want to volunteer, or just want to say hello, don't
-              hesitate to reach out!
+              We&apos;d love to hear from you. Whether you have a question about
+              our projects, want to volunteer, or just want to say hello,
+              don&apos;t hesitate to reach out!
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 text-gray-600">
