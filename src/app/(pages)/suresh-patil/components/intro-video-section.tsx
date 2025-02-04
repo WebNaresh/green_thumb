@@ -13,7 +13,7 @@ export function IntroVideoSection() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-green-800 mb-8 text-center"
         >
-          Introduction to Colonel Suresh Patil's Work
+          Introduction to Colonel Suresh Patil&apos;s Work
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,8 +37,9 @@ export function IntroVideoSection() {
           viewport={{ once: true }}
           className="mt-6 text-center text-gray-700"
         >
-          This video provides an overview of Colonel Suresh Patil's remarkable
-          journey and his impactful work in environmental conservation.
+          This video provides an overview of Colonel Suresh Patil&apos;s
+          remarkable journey and his impactful work in environmental
+          conservation.
         </motion.p>
       </div>
     </section>

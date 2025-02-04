@@ -8,19 +8,19 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Colonel Patil's dedication to environmental conservation is truly inspiring. His work has transformed the way we think about water management in Pune.",
+      "Colonel Patil&apos;s dedication to environmental conservation is truly inspiring. His work has transformed the way we think about water management in Pune.",
     author: "Dr. Anjali Deshmukh",
     title: "Environmental Scientist",
   },
   {
     quote:
-      "The impact of Colonel Patil's initiatives on local communities is immeasurable. He has not only conserved water but also empowered people.",
+      "The impact of Colonel Patil&apos;s initiatives on local communities is immeasurable. He has not only conserved water but also empowered people.",
     author: "Rajesh Patel",
     title: "Local Farmer",
   },
   {
     quote:
-      "Colonel Patil's innovative approach to the Khadakwasla Dam project sets a new standard for environmental conservation efforts across India.",
+      "Colonel Patil&apos;s innovative approach to the Khadakwasla Dam project sets a new standard for environmental conservation efforts across India.",
     author: "Priya Sharma",
     title: "Government Official",
   },
@@ -61,7 +61,7 @@ export function TestimonialsSection() {
         >
           <Quote className="h-12 w-12 text-green-600 mx-auto mb-4" />
           <p className="text-xl text-gray-700 mb-6">
-            "{testimonials[currentIndex].quote}"
+            &quot;{testimonials[currentIndex].quote}&quot;
           </p>
           <p className="font-semibold text-gray-800">
             {testimonials[currentIndex].author}

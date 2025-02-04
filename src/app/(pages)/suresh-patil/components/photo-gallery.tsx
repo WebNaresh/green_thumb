@@ -3,7 +3,6 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 
 const photos = [
   {
@@ -39,8 +38,6 @@ const photos = [
 ];
 
 export function PhotoGallery() {
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-
   return (
     <section>
       <motion.h2
