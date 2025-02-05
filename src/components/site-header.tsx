@@ -56,7 +56,7 @@ export function SiteHeader() {
               height={40}
               className="rounded-full"
             />
-            <span className=" font-bold text-green-800 sm:inline-block">
+            <span className="font-bold text-green-800 sm:inline-block">
               Green Thumb Foundation
             </span>
           </Link>
