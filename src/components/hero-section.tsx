@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 
 export function HeroSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const video = document.querySelector("video");
@@ -29,7 +28,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         {isVideoLoaded ? (
           <video
-            autoPlay={isPlaying}
+            autoPlay
             loop
             muted
             playsInline
