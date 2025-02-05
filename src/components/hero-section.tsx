@@ -23,14 +23,6 @@ export function HeroSection() {
     };
   }, []);
 
-  const handlePlayVideo = () => {
-    setIsPlaying(true);
-    const video = document.querySelector("video");
-    if (video) {
-      video.play();
-    }
-  };
-
   return (
     <section className="relative h-screen max-h-[800px] overflow-hidden">
       {/* Video Background */}
