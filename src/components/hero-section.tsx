@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -96,15 +96,6 @@ export function HeroSection() {
                 Donate Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-white bg-green-700"
-              onClick={handlePlayVideo}
-            >
-              <PlayCircle className="mr-2 h-5 w-5" />
-              Watch Video
             </Button>
           </motion.div>
         </div>

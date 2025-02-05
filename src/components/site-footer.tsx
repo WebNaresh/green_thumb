@@ -38,7 +38,7 @@ export function SiteFooter() {
   return (
     <>
       <footer className="bg-green-900 text-green-100 flex justify-center">
-        <div className="container py-12">
+        <div className="container py-12 px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* About Section */}
             <div>
