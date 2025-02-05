@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ChevronRight, Droplet, Leaf, Users } from "lucide-react";
+import { ChevronRight, Droplet, Leaf, Link, Users } from "lucide-react";
 
 export function VideoSection() {
   const projectItems = [
@@ -55,7 +55,7 @@ export function VideoSection() {
           >
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/nxHxwyPykXo?si=syw7PmymKBpB9nbE&autoplay=1"
+              src="https://www.youtube.com/embed/nxHxwyPykXo?si=syw7PmymKBpB9nbE&autoplay=0"
               title="GreenThumb Projects Overview"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -102,11 +102,12 @@ export function VideoSection() {
                 </motion.div>
               ))}
             </div>
-
-            <Button className="bg-green-600 hover:bg-green-700 text-white group">
-              Learn More About Our Projects
-              <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="/project">
+              <Button className="bg-green-600 hover:bg-green-700 text-white group">
+                Learn More About Our Projects
+                <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

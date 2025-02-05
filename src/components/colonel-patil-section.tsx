@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Award, Shield, Users } from "lucide-react";
+import { Award, Link, Shield, Users } from "lucide-react";
 import Image from "next/image";
 
 export function ColonelPatilSection() {
@@ -66,9 +66,11 @@ export function ColonelPatilSection() {
               and his ability to mobilize community support have been pivotal in
               initiating this large-scale environmental project.
             </p>
-            <Button className="bg-green-600 hover:bg-green-700 text-white">
-              Learn More About Col. Patil&apos;s Mission
-            </Button>
+            <Link href="/suresh-patil">
+              <Button className="bg-green-600 hover:bg-green-700 text-white">
+                Learn More About Col. Patil&apos;s Mission
+              </Button>
+            </Link>
           </motion.div>
         </div>
 
