@@ -40,10 +40,21 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.greenthumbfoundation.org/",
     siteName: "Green Thumb Foundation",
+    title: "Green Thumb Foundation | Khadakwasla Dam Conservation",
+    description:
+      "Green Thumb Foundation is dedicated to Khadakwasla Dam restoration and water conservation in Pune. Join our mission for a sustainable water future.",
+    images: [
+      {
+        url: "https://www.greenthumbfoundation.org/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Green Thumb Foundation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@GreenThumbFound",
+    site: "@GreenThumbFoundatuib",
     creator: "@GreenThumbFound",
   },
   viewport: {
