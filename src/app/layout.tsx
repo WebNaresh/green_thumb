@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { WhatsappButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import type React from "react"; // Import React
 import "./globals.css";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" />
         <GoogleAnalytics GA_MEASUREMENT_ID="G-3WY2LNX9EH" />
         <SiteHeader />
         {children}

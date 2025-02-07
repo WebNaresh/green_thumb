@@ -1,9 +1,7 @@
 "use client";
 
+import { RazorpayDonation } from "@/components/razorpay-donation";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { motion } from "framer-motion";
 import { Copy, Droplet, Heart, Users } from "lucide-react";
 import Image from "next/image";
@@ -114,40 +112,7 @@ export function DonateContent() {
             <h2 className="text-2xl font-semibold text-green-700 mb-6">
               Make Your Donation
             </h2>
-            <RadioGroup
-              defaultValue="1000"
-              onValueChange={handleDonationChange}
-              className="grid grid-cols-3 gap-4 mb-6"
-            >
-              {["500", "1000", "2000"].map((amount) => (
-                <div key={amount}>
-                  <RadioGroupItem
-                    value={amount}
-                    id={`amount-${amount}`}
-                    className="peer sr-only"
-                  />
-                  <Label
-                    htmlFor={`amount-${amount}`}
-                    className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-                  >
-                    ₹{amount}
-                  </Label>
-                </div>
-              ))}
-            </RadioGroup>
-            <div className="mb-6">
-              <Label htmlFor="custom-amount">Custom Amount (₹)</Label>
-              <Input
-                type="number"
-                id="custom-amount"
-                placeholder="Enter custom amount"
-                value={donationAmount}
-                onChange={handleCustomDonation}
-              />
-            </div>
-            <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-              Donate ₹{donationAmount} with Razorpay
-            </Button>
+            <RazorpayDonation />
 
             <div className="mt-8 space-y-4">
               <h3 className="text-xl font-semibold text-green-600">
