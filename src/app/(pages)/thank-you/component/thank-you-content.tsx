@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { toast } from "@/hooks/use-toast";
 
 import { motion } from "framer-motion";
 import { Share } from "lucide-react";
@@ -30,21 +29,6 @@ export function ThankYouContent() {
     }
   }, [searchParams]);
 
-  //   const handleDownloadCertificate = () => {
-  //     if (donationDetails) {
-  //       generateCertificate(
-  //         donationDetails.name,
-  //         donationDetails.amount,
-  //         donationDetails.paymentId
-  //       );
-  //       toast({
-  //         title: "Certificate Downloaded",
-  //         description:
-  //           "Your donation certificate has been generated and downloaded.",
-  //       });
-  //     }
-  //   };
-
   const handleShareDonation = () => {
     if (donationDetails) {
       const shareText = `I just donated ₹${donationDetails.amount} to support Green Thumb Foundation's mission to restore Khadakwasla Dam and secure Pune's water future. Join me in making a difference! https://www.greenthumbfoundation.org/donate`;
@@ -57,37 +41,28 @@ export function ThankYouContent() {
             url: "https://www.greenthumbfoundation.org/donate",
           })
           .then(() => {
-            toast({
-              title: "Shared Successfully",
-              description: "Thank you for spreading the word!",
-            });
+            alert("Shared Successfully. Thank you for spreading the word!");
           })
           .catch((error) => {
             console.error("Error sharing:", error);
-            toast({
-              title: "Sharing Failed",
-              description: "An error occurred while sharing. Please try again.",
-              variant: "destructive",
-            });
+            alert(
+              "Sharing Failed. An error occurred while sharing. Please try again."
+            );
           });
       } else {
         // Fallback for browsers that don't support the Web Share API
         navigator.clipboard
           .writeText(shareText)
           .then(() => {
-            toast({
-              title: "Copied to Clipboard",
-              description:
-                "Share text has been copied. You can now paste it wherever you'd like!",
-            });
+            alert(
+              "Copied to Clipboard. Share text has been copied. You can now paste it wherever you'd like!"
+            );
           })
           .catch((error) => {
             console.error("Error copying to clipboard:", error);
-            toast({
-              title: "Copy Failed",
-              description: "An error occurred while copying. Please try again.",
-              variant: "destructive",
-            });
+            alert(
+              "Copy Failed. An error occurred while copying. Please try again."
+            );
           });
       }
     }
@@ -128,12 +103,6 @@ export function ThankYouContent() {
             Your generosity today paves the way for a sustainable tomorrow.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            {/* <Button
-              onClick={handleDownloadCertificate}
-              className="bg-green-600 hover:bg-green-700"
-            >
-              <Download className="mr-2 h-4 w-4" /> Download Certificate
-            </Button> */}
             <Button onClick={handleShareDonation} variant="outline">
               <Share className="mr-2 h-4 w-4" /> Share Your Impact
             </Button>

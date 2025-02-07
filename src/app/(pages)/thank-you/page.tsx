@@ -1,5 +1,6 @@
+import { ThankYouContent } from "@/app/(pages)/thank-you/component/thank-you-content";
 import type { Metadata } from "next";
-import { ThankYouContent } from "./component/thank-you-content";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Thank You for Your Donation | Green Thumb Foundation",
@@ -7,6 +8,12 @@ export const metadata: Metadata = {
     "Thank you for supporting our mission to restore Khadakwasla Dam and secure Pune's water future.",
 };
 
-export default function ThankYouPage() {
-  return <ThankYouContent />;
-}
+const ThankYouPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThankYouContent />
+    </Suspense>
+  );
+};
+
+export default ThankYouPage;

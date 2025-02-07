@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
-import { useToast } from "@/hooks/use-toast";
+// Removed import of useToast
+// import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -52,7 +52,8 @@ export function RazorpayDonation() {
   const [mobile, setMobile] = useState("");
   const [panNumber, setPanNumber] = useState("");
   const [is80GRequired, setIs80GRequired] = useState(false);
-  const { toast } = useToast();
+  // Removed useToast hook
+  // const { toast } = useToast();
   const router = useRouter();
 
   const handleDonationChange = (value: string) => {
@@ -65,20 +66,14 @@ export function RazorpayDonation() {
 
   const handlePayment = async () => {
     if (!amount || isNaN(Number(amount))) {
-      toast({
-        title: "Invalid amount",
-        description: "Please enter a valid donation amount.",
-        variant: "destructive",
-      });
+      alert("Invalid amount. Please enter a valid donation amount.");
       return;
     }
 
     if (is80GRequired && (!name || !email || !mobile || !panNumber)) {
-      toast({
-        title: "Missing information",
-        description: "Please fill in all required fields for 80G certificate.",
-        variant: "destructive",
-      });
+      alert(
+        "Missing information. Please fill in all required fields for 80G certificate."
+      );
       return;
     }
 
@@ -98,11 +93,7 @@ export function RazorpayDonation() {
     const data = await response.json();
 
     if (!response.ok) {
-      toast({
-        title: "Error",
-        description: data.message || "Something went wrong",
-        variant: "destructive",
-      });
+      alert(data.message || "Something went wrong");
       router.push(`/thank-you?paymentId=amount=${amount}&name=${name}`);
       return;
     }
@@ -129,19 +120,14 @@ export function RazorpayDonation() {
         });
 
         if (result.ok) {
-          toast({
-            title: "Thank you for your donation!",
-            description: `Payment ID: ${response.razorpay_payment_id}`,
-          });
+          alert(
+            `Thank you for your donation! Payment ID: ${response.razorpay_payment_id}`
+          );
           router.push(
             `/thank-you?paymentId=${response.razorpay_payment_id}&amount=${amount}&name=${name}`
           );
         } else {
-          toast({
-            title: "Error",
-            description: "Failed to store donation information",
-            variant: "destructive",
-          });
+          alert("Failed to store donation information");
         }
       },
       prefill: {
