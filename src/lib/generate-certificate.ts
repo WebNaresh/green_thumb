@@ -21,7 +21,7 @@ export function generateCertificate(name: string, amount: string, paymentId: str
     doc.rect(15, 15, 267, 180)
 
     // Add organization logo
-    doc.addImage("/logo.png", "PNG", 20, 20, 40, 40)
+    // doc.addImage("/logo.png", "PNG", 20, 20, 40, 40)
 
     // Add certificate title
     doc.setFont("helvetica", "bold")

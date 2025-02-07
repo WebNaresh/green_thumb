@@ -5,19 +5,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Copy, Droplet, Heart, Users } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 
 export function DonateContent() {
-  const [donationAmount, setDonationAmount] = useState("1000");
-
-  const handleDonationChange = (value: string) => {
-    setDonationAmount(value);
-  };
-
-  const handleCustomDonation = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDonationAmount(e.target.value);
-  };
-
   const handleCopyDetail = (detail: string) => {
     navigator.clipboard.writeText(detail);
     alert(`${detail} copied to clipboard!`);
