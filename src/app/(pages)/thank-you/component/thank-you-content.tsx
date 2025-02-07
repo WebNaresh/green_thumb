@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-
 import { generateCertificate } from "@/lib/generate-certificate";
 import { motion } from "framer-motion";
-import { Download, Share } from "lucide-react";
+import { Download, Eye, Share } from "lucide-react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,66 +31,98 @@ export function ThankYouContent() {
     }
   }, [searchParams]);
 
-  const handleDownloadCertificate = () => {
-    if (donationDetails) {
-      generateCertificate(
-        donationDetails.name,
-        donationDetails.amount,
-        donationDetails.paymentId
-      );
+  const generateAndPreviewCertificate = () => {
+    if (!donationDetails) return;
+
+    const certificateHTML = generateCertificate(
+      donationDetails.name,
+      donationDetails.amount,
+      donationDetails.paymentId
+    );
+    const previewWindow = window.open("", "_blank");
+    if (previewWindow) {
+      previewWindow.document.write(certificateHTML);
+      previewWindow.document.close();
+    } else {
       toast({
-        title: "Certificate Downloaded",
-        description:
-          "Your donation certificate has been generated and downloaded.",
+        title: "Preview Blocked",
+        description: "Please allow pop-ups to preview the certificate.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleDownloadCertificate = () => {
+    if (!donationDetails) return;
+
+    const certificateHTML = generateCertificate(
+      donationDetails.name,
+      donationDetails.amount,
+      donationDetails.paymentId
+    );
+    const printWindow = window.open("", "_blank");
+    if (printWindow) {
+      printWindow.document.write(certificateHTML);
+      printWindow.document.close();
+      printWindow.onload = () => {
+        printWindow.print();
+        printWindow.onafterprint = () => {
+          printWindow.close();
+        };
+      };
+    } else {
+      toast({
+        title: "Download Blocked",
+        description: "Please allow pop-ups to download the certificate.",
+        variant: "destructive",
       });
     }
   };
 
   const handleShareDonation = () => {
-    if (donationDetails) {
-      const shareText = `I just donated ₹${donationDetails.amount} to support Green Thumb Foundation's mission to restore Khadakwasla Dam and secure Pune's water future. Join me in making a difference! https://www.greenthumbfoundation.org/donate`;
+    if (!donationDetails) return;
 
-      if (navigator.share) {
-        navigator
-          .share({
-            title: "My Donation to Green Thumb Foundation",
-            text: shareText,
-            url: "https://www.greenthumbfoundation.org/donate",
-          })
-          .then(() => {
-            toast({
-              title: "Shared Successfully",
-              description: "Thank you for spreading the word!",
-            });
-          })
-          .catch((error) => {
-            console.error("Error sharing:", error);
-            toast({
-              title: "Sharing Failed",
-              description: "An error occurred while sharing. Please try again.",
-              variant: "destructive",
-            });
+    const shareText = `I just donated ₹${donationDetails.amount} to support Green Thumb Foundation's mission to restore Khadakwasla Dam and secure Pune's water future. Join me in making a difference! https://www.greenthumbfoundation.org/donate`;
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "My Donation to Green Thumb Foundation",
+          text: shareText,
+          url: "https://www.greenthumbfoundation.org/donate",
+        })
+        .then(() => {
+          toast({
+            title: "Shared Successfully",
+            description: "Thank you for spreading the word!",
           });
-      } else {
-        // Fallback for browsers that don't support the Web Share API
-        navigator.clipboard
-          .writeText(shareText)
-          .then(() => {
-            toast({
-              title: "Copied to Clipboard",
-              description:
-                "Share text has been copied. You can now paste it wherever you'd like!",
-            });
-          })
-          .catch((error) => {
-            console.error("Error copying to clipboard:", error);
-            toast({
-              title: "Copy Failed",
-              description: "An error occurred while copying. Please try again.",
-              variant: "destructive",
-            });
+        })
+        .catch((error) => {
+          console.error("Error sharing:", error);
+          toast({
+            title: "Sharing Failed",
+            description: "An error occurred while sharing. Please try again.",
+            variant: "destructive",
           });
-      }
+        });
+    } else {
+      navigator.clipboard
+        .writeText(shareText)
+        .then(() => {
+          toast({
+            title: "Copied to Clipboard",
+            description:
+              "Share text has been copied. You can now paste it wherever you'd like!",
+          });
+        })
+        .catch((error) => {
+          console.error("Error copying to clipboard:", error);
+          toast({
+            title: "Copy Failed",
+            description: "An error occurred while copying. Please try again.",
+            variant: "destructive",
+          });
+        });
     }
   };
 
@@ -104,7 +136,7 @@ export function ThankYouContent() {
           className="bg-white rounded-lg shadow-xl p-8 text-center"
         >
           <Image
-            src="/images/thank-you-illustration.svg"
+            src="/logo.png"
             alt="Thank you illustration"
             width={200}
             height={200}
@@ -126,16 +158,39 @@ export function ThankYouContent() {
             cause.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  onClick={generateAndPreviewCertificate}
+                  variant="outline"
+                  className="w-full sm:w-auto"
+                >
+                  <Eye className="mr-2 h-4 w-4" />
+                  Preview Certificate
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl w-full h-[80vh]">
+                {/* {certificatePreviewUrl && <iframe src={certificatePreviewUrl} className="w-full h-full" />} */}
+              </DialogContent>
+            </Dialog>
+
             <Button
               onClick={handleDownloadCertificate}
-              className="bg-green-600 hover:bg-green-700"
+              className="bg-green-600 hover:bg-green-700 w-full sm:w-auto"
             >
-              <Download className="mr-2 h-4 w-4" /> Download Certificate
+              <Download className="mr-2 h-4 w-4" />
+              Save as PDF
             </Button>
-            <Button onClick={handleShareDonation} variant="outline">
+
+            <Button
+              onClick={handleShareDonation}
+              variant="outline"
+              className="w-full sm:w-auto"
+            >
               <Share className="mr-2 h-4 w-4" /> Share Your Impact
             </Button>
           </div>
+
           <div className="bg-green-50 rounded-lg p-6">
             <h2 className="text-xl font-semibold text-green-800 mb-4">
               What Your Donation Supports
