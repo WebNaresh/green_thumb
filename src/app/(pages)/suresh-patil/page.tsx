@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://www.greenthumbfoundation.org/suresh-patil",
     images: [
       {
-        url: "https://www.greenthumbfoundation.org/images/colonel-patil-og-image.png",
+        url: "https://www.greenthumbfoundation.org/images/colonel-patil-og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Colonel Suresh Patil",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "Learn about Colonel Suresh Patil's dedication to environmental conservation and water management in Pune.",
     images: [
       {
-        url: "https://www.greenthumbfoundation.org/images/colonel-patil-og-image.png",
+        url: "https://www.greenthumbfoundation.org/images/colonel-patil-og-image.jpg",
         alt: "Colonel Suresh Patil",
       },
     ],
