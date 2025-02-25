@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://www.greenthumbfoundation.org/project",
     images: [
       {
-        url: "https://www.greenthumbfoundation.org/images/khadakwasla-dam.jpg",
+        url: "https://www.greenthumbfoundation.org/images/og-main.jpg",
         width: 1200,
         height: 630,
         alt: "Khadakwasla Dam Rejuvenation Project",

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://www.greenthumbfoundation.org/contact",
     images: [
       {
-        url: "https://www.greenthumbfoundation.org/images/contact-us.jpg",
+        url: "https://www.greenthumbfoundation.org/images/og-main.jpg",
         width: 1200,
         height: 630,
         alt: "Contact Green Thumb Foundation",
