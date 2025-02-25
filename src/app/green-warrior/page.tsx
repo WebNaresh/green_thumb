@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Discover the story of Khadakwasla Dam conservation through our Green Warrior booklet. See the impact of our water projects in Pune.",
     images: [
       {
-        url: "https://www.greenthumbfoundation.org/main.png",
+        url: "https://www.greenthumbfoundation.org/pg-main.png",
         width: 1200,
         height: 630,
         alt: "Green Warrior Booklet - Khadakwasla Dam Conservation",
