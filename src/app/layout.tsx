@@ -1,5 +1,4 @@
 import { DonateButton } from "@/components/donate-button";
-
 import GoogleAnalytics from "@/components/google-analytics";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -48,13 +47,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@GreenThumbFoundatuib",
+    site: "@GreenThumbFound",
     creator: "@GreenThumbFound",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
+    title: "Green Thumb Foundation | Khadakwasla Dam Conservation",
+    description:
+      "Green Thumb Foundation is dedicated to Khadakwasla Dam restoration and water conservation in Pune. Join our mission for a sustainable water future.",
+    images: [
+      {
+        url: "https://www.greenthumbfoundation.org/images/og-main.jpg",
+        alt: "Green Thumb Foundation",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -68,6 +71,13 @@ export const metadata: Metadata = {
     },
   },
 };
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {

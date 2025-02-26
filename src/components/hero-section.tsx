@@ -42,8 +42,8 @@ export function HeroSection() {
             <Image
               src="/img/hero.png"
               alt="Hero Image"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
             />
           </div>
         )}

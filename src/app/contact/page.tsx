@@ -10,14 +10,18 @@ export const metadata: Metadata = {
     "Khadakwasla Dam support",
     "water conservation volunteer",
     "Pune environmental projects",
+    "environmental conservation",
+    "sustainability initiatives",
+    "Green Thumb contact",
   ],
   openGraph: {
     title: "Contact Green Thumb Foundation | Join Our Conservation Efforts",
     description:
       "Reach out to Green Thumb Foundation and be part of our mission to restore Khadakwasla Dam and secure Pune's water future.",
+    url: "https://www.greenthumbfoundation.org/contact",
     images: [
       {
-        url: "/contact-og-image.jpg",
+        url: "https://www.greenthumbfoundation.org/images/og-main.jpg",
         width: 1200,
         height: 630,
         alt: "Contact Green Thumb Foundation",
