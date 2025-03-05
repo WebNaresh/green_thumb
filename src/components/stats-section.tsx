@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Droplet, Leaf, Users } from "lucide-react";
+import Link from "next/link";
 import type React from "react"; // Added import for React
 import { useEffect, useState } from "react";
 
@@ -88,13 +89,9 @@ export function StatsSection() {
             Every number represents a step towards a healthier environment and
             stronger communities.
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white font-semibold"
-          >
-            <a href="#projects">Learn More About Our Projects</a>
-          </Button>
+          <Link href="/project">
+            <Button>Learn More</Button>
+          </Link>
         </motion.div>
       </div>
     </section>
