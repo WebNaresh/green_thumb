@@ -1,38 +1,43 @@
 "use client";
 
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const photos = [
   {
     id: "photo1",
-    src: "/images/colonel-patil-1.jpg",
+    src: "/colonel-patil/patil1.jpg",
     alt: "Colonel Patil at Khadakwasla Dam",
   },
   {
     id: "photo2",
-    src: "/images/colonel-patil-2.jpg",
+    src: "/colonel-patil/patil2.jpg",
     alt: "Colonel Patil during a tree planting event",
   },
   {
     id: "photo3",
-    src: "/images/colonel-patil-3.jpg",
+    src: "/colonel-patil/patil3.jpg",
     alt: "Colonel Patil addressing volunteers",
   },
   {
     id: "photo4",
-    src: "/images/colonel-patil-4.jpg",
+    src: "/colonel-patil/patil4.jpg",
     alt: "Colonel Patil receiving an award",
   },
   {
     id: "photo5",
-    src: "/images/colonel-patil-5.jpg",
+    src: "/colonel-patil/patil5.jpg",
     alt: "Colonel Patil inspecting desilting work",
   },
   {
     id: "photo6",
-    src: "/images/colonel-patil-6.jpg",
+    src: "/colonel-patil/patil1.jpg",
     alt: "Colonel Patil with government officials",
   },
 ];
@@ -66,11 +71,12 @@ export function PhotoGallery() {
                     alt={photo.alt}
                     layout="fill"
                     objectFit="cover"
-                    className="transition-transform duration-300 hover:scale-110"
+                    className=""
                   />
                 </div>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[800px]">
+                <DialogTitle>{photo.alt}</DialogTitle>
                 <div className="relative aspect-square">
                   <Image
                     src={photo.src || "/placeholder.svg"}
