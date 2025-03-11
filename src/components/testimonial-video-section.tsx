@@ -73,8 +73,8 @@ export function TestimonialVideoSection() {
                   style={{ minHeight: "300px", height: "100%" }}
                 ></iframe>
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-green-700 mb-2">
+              <div className="text-center mt-4">
+                <h3 className="text-xl font-semibold text-green-700 mb-2 mt-4">
                   {testimonial.name}
                 </h3>
                 <p className="text-gray-600 mb-3">{testimonial.title}</p>

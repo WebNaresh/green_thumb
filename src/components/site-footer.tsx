@@ -124,8 +124,8 @@ export function SiteFooter() {
         <div className="border-t border-green-800"></div>
       </footer>
       <div className="flex justify-center">
-        <div className="container py-6 flex flex-col sm:flex-row justify-between items-center">
-          <p>&copy; 2023 GreenThumb. All rights reserved.</p>
+        <div className="container py-6 flex flex-col sm:flex-row justify-between items-center px-4 md:px-8">
+          <p>&copy; {new Date().getFullYear()} Green Thumb Foundation</p>
           <div className="mt-4 sm:mt-0 space-x-4">
             {legalLinks.map((link) => (
               <Link
