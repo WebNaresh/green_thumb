@@ -8,19 +8,19 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Colonel Patil&apos;s dedication to environmental conservation is truly inspiring. His work has transformed the way we think about water management in Pune.",
+      "Colonel Patil dedication to environmental conservation is truly inspiring. His work has transformed the way we think about water management in Pune.",
     author: "Dr. Anjali Deshmukh",
     title: "Environmental Scientist",
   },
   {
     quote:
-      "The impact of Colonel Patil&apos;s initiatives on local communities is immeasurable. He has not only conserved water but also empowered people.",
+      "The impact of Colonel Patil initiatives on local communities is immeasurable. He has not only conserved water but also empowered people.",
     author: "Rajesh Patel",
     title: "Local Farmer",
   },
   {
     quote:
-      "Colonel Patil&apos;s innovative approach to the Khadakwasla Dam project sets a new standard for environmental conservation efforts across India.",
+      "Colonel Patil innovative approach to the Khadakwasla Dam project sets a new standard for environmental conservation efforts across India.",
     author: "Priya Sharma",
     title: "Government Official",
   },
