@@ -70,7 +70,6 @@ export function TestimonialVideoSection() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full h-full rounded-lg shadow-lg"
-                  style={{ minHeight: "300px", height: "100%" }}
                 ></iframe>
               </div>
               <div className="text-center mt-4">
