@@ -24,6 +24,26 @@ export function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+
+    // Format the message for WhatsApp
+    const message = `
+*New Contact Form Submission*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Subject:* ${formData.subject}
+*Message:* ${formData.message}
+    `.trim();
+
+    // Replace this with the admin's phone number (include country code without +)
+    const adminPhone = "919371202875"; // Example: 91 for India + phone number
+
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
