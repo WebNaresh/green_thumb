@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import { AchievementsSection } from "./achievements-section";
 import { CTASection } from "./cta-section";
 
@@ -8,7 +8,7 @@ import { MissionSection } from "./mission-section";
 
 import { TeamSection } from "./team-section";
 
-import { ImpactSection } from "./impact-section";
+import { ImpactSection } from "./impact-section"; 
 import { RecentActivitiesSection } from "./recent-activities-section";
 import { TimelineSection } from "./timeline-section";
 import { VisionSection } from "./vision-section";
