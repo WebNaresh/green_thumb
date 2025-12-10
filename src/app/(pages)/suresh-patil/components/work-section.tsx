@@ -7,62 +7,59 @@ import { Award, Droplet, Leaf, Users } from "lucide-react";
 const workItems = [
   {
     icon: Droplet,
-    title: "Khadakwasla Dam Desilting",
+    title: "Khadakwasla Restoration",
     description:
-      "Spearheaded the massive desilting project, removing millions of cubic meters of silt and significantly increasing the dam's water storage capacity.",
+      "Spearheaded the massive desilting project, removing millions of cubic meters of silt and restoring the dam's lifeline capacity.",
+    color: "bg-blue-50 text-blue-600"
   },
   {
     icon: Leaf,
-    title: "Afforestation Initiatives",
+    title: "Afforestation Drives",
     description:
-      "Led extensive tree-planting campaigns in the dam's catchment area, enhancing biodiversity and reducing soil erosion.",
+      "Led campaigns planting over 100,000 trees in the catchment area, creating green lungs for the city and preventing erosion.",
+    color: "bg-green-50 text-green-600"
   },
   {
     icon: Users,
-    title: "Community Engagement",
+    title: "People's Movement",
     description:
-      "Mobilized local communities and volunteers, creating awareness about water conservation and environmental protection.",
+      "Transformed a personal mission into a mass movement, mobilizing thousands of citizens, students, and corporates.",
+    color: "bg-purple-50 text-purple-600"
   },
   {
     icon: Award,
-    title: "Policy Advocacy",
+    title: "Policy & Advocacy",
     description:
-      "Actively engaged with government bodies to promote sustainable water management policies and practices.",
+      "Actively engaging with government bodies to shape sustainable water management policies for future generations.",
+    color: "bg-amber-50 text-amber-600"
   },
 ];
 
 export function WorkSection() {
   return (
     <section>
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold text-green-800 mb-8 text-center"
-      >
-        Impactful Work
-      </motion.h2>
+      <div className="flex items-center gap-4 mb-8">
+        <div className="w-12 h-1 bg-green-600 rounded-full" />
+        <h2 className="text-2xl font-bold text-gray-900">Key Initiatives</h2>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         {workItems.map((item, index) => (
           <motion.div
             key={item.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
+            className="group"
           >
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <item.icon className="h-6 w-6 mr-2 text-green-600" />
-                  {item.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{item.description}</p>
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full">
+              <div className={`w-12 h-12 rounded-lg ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <item.icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>

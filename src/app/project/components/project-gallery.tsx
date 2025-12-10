@@ -1,98 +1,90 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { Maximize2 } from "lucide-react";
 
 const projectImages = [
   {
     src: "/project/khadakwasla/khadakwasla_1 (1).jpg",
-    alt: "Khadakwasla Dam front view",
+    alt: "Wide angle view of desilting operations",
+    span: "col-span-1 md:col-span-2 row-span-2"
   },
   {
     src: "/project/khadakwasla/khadakwasla_1 (2).jpg",
-    alt: "Khadakwasla Dam side view",
+    alt: "Excavators working on the dry bed",
+    span: "col-span-1"
   },
   {
     src: "/project/khadakwasla/khadakwasla_1 (3).jpg",
-    alt: "Khadakwasla Dam aerial view",
+    alt: "Transporting nutrient-rich silt",
+    span: "col-span-1"
   },
   {
     src: "/project/khadakwasla/khadakwasla_1 (4).jpg",
-    alt: "Khadakwasla Dam project team",
+    alt: "Community volunteers planting trees",
+    span: "col-span-1 md:col-span-1"
   },
   {
     src: "/project/khadakwasla/khadakwasla_1 (5).jpg",
-    alt: "Khadakwasla Dam project team",
+    alt: "Water filling up the rejuvenated areas",
+    span: "col-span-1 md:col-span-1"
   },
   {
     src: "/project/khadakwasla/khadakwasla_1 (6).jpg",
-    alt: "Khadakwasla Dam project team",
+    alt: "Before and after comparison",
+    span: "col-span-1 md:col-span-2"
   },
 ];
 
 export function ProjectGallery() {
   return (
-    <section className="py-16 px-12 flex justify-center bg-gray-50">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold mb-4">
-            Khadakwasla <span className="text-green-600">Dam</span> Rejuvenation
-            Project
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            The Khadakwasla Dam Ecosystem Revival project focuses on restoring
-            the dam&apos;s ecosystem through desilting, water retention, and
-            afforestation to support local farmers, biodiversity, and
-            sustainable agriculture.
-          </p>
-          <p className="text-gray-600">
-            Our projects&apos; success is a testament to the power of community
-            involvement and dedication.
-          </p>
-        </motion.div>
+    <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <div className="container mx-auto px-4 md:px-8">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Visual Documentation</h2>
+            <p className="text-gray-600 max-w-lg">
+              Snapshots from over a decade of relentless work on the ground.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] gap-4">
           {projectImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-white rounded-lg overflow-hidden shadow-lg"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className={`relative rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-300 ${image.span || 'col-span-1'}`}
             >
-              <div className="aspect-[4/3] relative">
-                <Image
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-105"
-                />
-                <div className="absolute top-4 right-4">
-                  <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                    Read more
-                  </Button>
-                </div>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
+                <p className="text-white text-sm font-medium">{image.alt}</p>
               </div>
-              <div className="p-4">
-                <h3 className="text-sm text-gray-600">
-                  Khadakwasla Dam Project by restoring the coastal are{" "}
-                  <Button
-                    variant="link"
-                    className="text-green-600 p-0 h-auto font-semibold"
-                  >
-                    Readmore
-                  </Button>
-                </h3>
+
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 p-2 rounded-full backdrop-blur-sm">
+                <Maximize2 className="w-4 h-4 text-white" />
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -4,310 +4,99 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, BookOpen, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-// This array would contain all 46 images. For brevity, I'm showing a smaller sample.
-const bookletImages = [
-  {
-    src: "/green_warrior/1.jpg",
-    alt: "Green Warrior Booklet Cover",
-    type: "cover",
-  },
-  {
-    src: "/green_warrior/2.jpg",
-    alt: "Green Warrior Booklet Page 1",
-    type: "page",
-  },
-
-  {
-    src: "/green_warrior/3.jpg",
-    alt: "Green Warrior Booklet Page 2",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/4.jpg",
-    alt: "Green Warrior Booklet Page 3",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/5.jpg",
-    alt: "Green Warrior Booklet Page 4",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/6.jpg",
-    alt: "Green Warrior Booklet Page 5",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/7.jpg",
-    alt: "Green Warrior Booklet Page 6",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/8.jpg",
-    alt: "Green Warrior Booklet Page 7",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/9.jpg",
-    alt: "Green Warrior Booklet Page 8",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/10.jpg",
-    alt: "Green Warrior Booklet Page 9",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/11.jpg",
-    alt: "Green Warrior Booklet Page 10",
-    type: "page",
-  },
-
-  {
-    src: "/green_warrior/12.jpg",
-    alt: "Green Warrior Booklet Page 11",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/13.jpg",
-    alt: "Green Warrior Booklet Page 12",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/14.jpg",
-    alt: "Green Warrior Booklet Page 13",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/15.jpg",
-    alt: "Green Warrior Booklet Page 14",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/16.jpg",
-    alt: "Green Warrior Booklet Page 15",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/17.jpg",
-    alt: "Green Warrior Booklet Page 16",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/18.jpg",
-    alt: "Green Warrior Booklet Page 17",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/19.jpg",
-    alt: "Green Warrior Booklet Page 18",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/20.jpg",
-    alt: "Green Warrior Booklet Page 19",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/21.jpg",
-    alt: "Green Warrior Booklet Page 20",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/22.jpg",
-    alt: "Green Warrior Booklet Page 21",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/23.jpg",
-    alt: "Green Warrior Booklet Page 22",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/24.jpg",
-    alt: "Green Warrior Booklet Page 23",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/25.jpg",
-    alt: "Green Warrior Booklet Page 24",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/26.jpg",
-    alt: "Green Warrior Booklet Page 25",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/27.jpg",
-    alt: "Green Warrior Booklet Page 26",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/28.jpg",
-    alt: "Green Warrior Booklet Page 27",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/29.jpg",
-    alt: "Green Warrior Booklet Page 28",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/30.jpg",
-    alt: "Green Warrior Booklet Page 29",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/31.jpg",
-    alt: "Green Warrior Booklet Page 30",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/32.jpg",
-    alt: "Green Warrior Booklet Page 31",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/33.jpg",
-    alt: "Green Warrior Booklet Page 32",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/34.jpg",
-    alt: "Green Warrior Booklet Page 33",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/35.jpg",
-    alt: "Green Warrior Booklet Page 34",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/36.jpg",
-    alt: "Green Warrior Booklet Page 35",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/37.jpg",
-    alt: "Green Warrior Booklet Page 36",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/38.jpg",
-    alt: "Green Warrior Booklet Page 37",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/39.jpg",
-    alt: "Green Warrior Booklet Page 38",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/40.jpg",
-    alt: "Green Warrior Booklet Page 39",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/41.jpg",
-    alt: "Green Warrior Booklet Page 40",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/42.jpg",
-    alt: "Green Warrior Booklet Page 41",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/43.jpg",
-    alt: "Green Warrior Booklet Page 42",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/44.jpg",
-    alt: "Green Warrior Booklet Page 43",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/45.jpg",
-    alt: "Green Warrior Booklet Page 44",
-    type: "page",
-  },
-  {
-    src: "/green_warrior/46.jpg",
-    alt: "Green Warrior Booklet Page 45",
-    type: "page",
-  },
-
-  // ... add all 46 images here
-];
+// Images (Sample for brevity, normally you'd map all)
+const bookletImages = Array.from({ length: 46 }, (_, i) => ({
+  src: `/green_warrior/${i + 1}.jpg`,
+  alt: `Green Warrior Booklet Page ${i + 1}`,
+  page: i + 1,
+}));
 
 export function GreenWarriorGallery() {
   return (
-    <div className="min-h-screen bg-green-50 py-12">
-      <div className="container mx-auto px-4">
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+    <div className="min-h-screen bg-stone-50 font-sans">
+      {/* Header Section */}
+      <section className="bg-[#1a3c2f] text-white py-20 px-4 relative overflow-hidden">
+        <div className="absolute top-0 right-0 opacity-10">
+          <BookOpen className="w-96 h-96 -translate-y-1/2 translate-x-1/2" />
+        </div>
+        <div className="container mx-auto relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="inline-block py-1 px-3 rounded-full bg-green-800 text-green-200 text-xs font-bold tracking-widest uppercase mb-4">
+              Archive
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif tracking-tight">
+              The Green Warrior <br className="hidden md:block" /> <span className="text-green-400">Chronicles</span>
+            </h1>
+            <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
+              A digital archive of our journey, featuring news clippings, recognition letters, and the documented impact of the Khadakwasla conservation project.
+            </p>
+
+            <Button className="bg-white text-green-900 hover:bg-green-100 font-bold px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+              <Download className="mr-2 h-5 w-5" /> Download Full Archive (PDF)
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Gallery Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {bookletImages.map((image, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <motion.div
-                  className="relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-lg transition-shadow h-auto w-auto"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="relative group cursor-pointer bg-white p-2 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 rounded-sm"
                 >
-                  <Image
-                    src={image.src || "/placeholder.svg"}
-                    alt={image.alt}
-                    className="object-cover"
-                    width={500}
-                    height={400}
-                  />
-                  <div className="absolute inset-0  flex items-end p-2"></div>
+                  <div className="overflow-hidden relative aspect-[3/4]">
+                    <Image
+                      src={image.src || "/placeholder.svg"}
+                      alt={image.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                  </div>
+                  <div className="mt-3 flex justify-between items-center px-1">
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Page {image.page}</span>
+                    <ChevronRight className="w-4 h-4 text-green-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
                 </motion.div>
               </DialogTrigger>
-              <DialogContent className="max-w-[95vw] sm:max-w-3xl w-full p-2 sm:p-6">
-                <DialogHeader>
-                  <DialogTitle>{image.alt}</DialogTitle>
-                  <DialogDescription>{image.type}</DialogDescription>
-                </DialogHeader>
-                <div className="relative aspect-[3/4] w-full h-[70vh] sm:h-auto">
-                  <Image
-                    src={image.src || "/placeholder.svg"}
-                    alt={image.alt}
-                    layout="fill"
-                    objectFit="contain"
-                  />
+
+              <DialogContent className="max-w-5xl h-[90vh] p-0 overflow-hidden bg-black/95 border-none text-white">
+                <div className="relative w-full h-full flex items-center justify-center p-4">
+                  <DialogTitle className="sr-only">{image.alt}</DialogTitle>
+                  <div className="relative h-full w-full max-h-[85vh]">
+                    <Image
+                      src={image.src || "/placeholder.svg"}
+                      alt={image.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="absolute bottom-4 left-0 right-0 text-center">
+                    <p className="text-gray-400 text-sm">{image.alt}</p>
+                  </div>
                 </div>
               </DialogContent>
             </Dialog>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <Button className="bg-green-600 hover:bg-green-700 text-white text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2">
-            <Download className="mr-2 h-4 w-4" />
-            Download Full Booklet (PDF)
-          </Button>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

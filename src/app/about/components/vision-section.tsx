@@ -1,109 +1,75 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Leaf, Users } from "lucide-react";
+import { Eye, Globe, Heart } from "lucide-react";
 import Image from "next/image";
 
 export function VisionSection() {
   return (
-    <section
-      className="py-16 bg-gradient-to-b from-white to-green-50"
-      id="vision-section"
-    >
+    <section className="py-16 relative" id="vision-section">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl font-bold text-green-800 mb-4">
-            Our Vision for a Greener Future
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At Green Thumb, we believe in the power of collective action to
-            create a sustainable world. Our vision is to inspire and empower
-            communities to take charge of their environment and work towards a
-            greener, healthier planet.
-          </p>
-        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col md:flex-row gap-12 items-stretch">
+          {/* Left: Image Card */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            className="w-full md:w-1/2 relative min-h-[400px] rounded-3xl overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            transition={{ duration: 0.8 }}
           >
-            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Eye className="h-8 w-8 text-green-500 mb-4" />
-              <h3 className="text-2xl font-semibold text-green-700 mb-4">
-                &quot;Together, we can make a difference&quot;
-              </h3>
-              <p className="text-gray-600">
-                Our mission is to bring people together to protect and restore
-                natural ecosystems, promote sustainable practices, and ensure a
-                healthy environment for future generations.
+            <Image
+              src="/about/about2.jpg"
+              alt="Vision for Green Future"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-green-900/30 mix-blend-multiply" />
+            <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
+              <p className="text-green-800 font-serif italic text-lg text-center">
+                "We don't inherit the earth from our ancestors, we borrow it from our children."
               </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-green-100 p-4 rounded-lg"
-              >
-                <Leaf className="h-6 w-6 text-green-600 mb-2" />
-                <h4 className="font-semibold text-green-800 mb-2">
-                  Ecosystem Restoration
-                </h4>
-                <p className="text-sm text-gray-700">
-                  Reviving and protecting natural habitats
-                </p>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-green-100 p-4 rounded-lg"
-              >
-                <Users className="h-6 w-6 text-green-600 mb-2" />
-                <h4 className="font-semibold text-green-800 mb-2">
-                  Community Engagement
-                </h4>
-                <p className="text-sm text-gray-700">
-                  Empowering local communities for environmental action
-                </p>
-              </motion.div>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-green-200 rounded-lg transform rotate-3"></div>
-            <Image
-              src="/about/about2.jpg"
-              alt="Vision for a greener future"
-              width={800}
-              height={600}
-              className="rounded-lg shadow-xl relative z-10"
-            />
+          {/* Right: Content */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="absolute bottom-4 left-4 right-4 bg-white bg-opacity-90 p-4 rounded-lg shadow-lg"
             >
-              <p className="text-green-800 font-semibold">
-                Envisioning a world where nature and humanity thrive in harmony
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                A Vision for a <span className="text-green-600">Thriving Planet</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We envision a world where communities are not just passive observers but active guardians of their environment. Our goal is to create a sustainable ecosystem where water is abundant, and nature serves all.
               </p>
             </motion.div>
-          </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { icon: Eye, title: "Visualize", text: "A clean, water-secure future." },
+                { icon: Globe, title: "Mobilize", text: "Communities for massive action." },
+                { icon: Heart, title: "Vitalize", text: "Ecosystems for long-term health." }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  className="bg-green-50 p-4 rounded-xl text-center hover:bg-green-100 transition-colors"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + (idx * 0.1) }}
+                >
+                  <item.icon className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                  <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                  <p className="text-xs text-gray-600">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   );
