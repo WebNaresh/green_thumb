@@ -25,9 +25,39 @@ export const metadata: Metadata = {
   },
 };
 
+import Script from "next/script";
+
 export default function ProjectPage() {
   return (
     <>
+      <Script
+        id="project-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Project",
+            "name": "Khadakwasla Dam Rejuvenation",
+            "description": "A massive desilting and afforestation project to restore water storage capacity for Pune City.",
+            "organizer": {
+              "@type": "NGO",
+              "name": "Green Thumb Foundation",
+              "url": "https://www.greenthumbfoundation.org"
+            },
+            "location": {
+              "@type": "Place",
+              "name": "Khadakwasla Dam",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              }
+            },
+            "status": "Active"
+          }),
+        }}
+      />
       <ProjectContent />
       <ProjectGallery />
     </>

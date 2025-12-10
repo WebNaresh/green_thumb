@@ -24,6 +24,33 @@ export const metadata: Metadata = {
   },
 };
 
+import Script from "next/script";
+
 export default function ColonelPatilPage() {
-  return <ColonelPatilContent />;
+  return (
+    <>
+      <Script
+        id="colonel-patil-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Colonel Suresh Patil",
+            "jobTitle": "Founder",
+            "affiliation": {
+              "@type": "Organization",
+              "name": "Green Thumb Foundation"
+            },
+            "url": "https://www.greenthumbfoundation.org/suresh-patil",
+            "image": "https://www.greenthumbfoundation.org/colonel-og.png",
+            "description": "Retired army officer and environmentalist known for the Khadakwasla Dam desilting project.",
+            "nationality": "Indian",
+            "honorificPrefix": "Colonel"
+          }),
+        }}
+      />
+      <ColonelPatilContent />
+    </>
+  );
 }

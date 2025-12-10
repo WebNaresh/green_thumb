@@ -96,7 +96,39 @@ export default function RootLayout({
         <SiteFooter />
         <WhatsappButton />
         <DonateButton />
+        <Script
+          id="json-ld-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NGO",
+              "name": "Green Thumb Foundation",
+              "url": "https://www.greenthumbfoundation.org",
+              "logo": "https://www.greenthumbfoundation.org/logo.png",
+              "sameAs": [
+                "https://www.facebook.com/GreenThumbFoundation",
+                "https://twitter.com/GreenThumbFound",
+                "https://www.instagram.com/greenthumbfoundation"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9371202875",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": "en"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "4, Nehru Marg, Ghorpadi Cantonment",
+                "addressLocality": "Pune",
+                "postalCode": "411001",
+                "addressCountry": "IN"
+              }
+            }),
+          }}
+        />
       </body>
-    </html>
+    </html >
   );
 }
