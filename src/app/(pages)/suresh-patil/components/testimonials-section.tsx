@@ -59,8 +59,8 @@ export function TestimonialsSection() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <Quote className="h-12 w-12 text-green-600 mx-auto mb-4" />
-          <p className="text-xl text-gray-700 mb-6">
+          <Quote className="h-10 w-10 md:h-12 md:w-12 text-green-600 mx-auto mb-4" />
+          <p className="text-lg md:text-xl text-gray-700 mb-6 break-words max-w-full px-2">
             &quot;{testimonials[currentIndex].quote}&quot;
           </p>
           <p className="font-semibold text-gray-800">

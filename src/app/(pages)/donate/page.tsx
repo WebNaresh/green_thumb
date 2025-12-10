@@ -2,30 +2,25 @@ import type { Metadata } from "next";
 import { DonateContent } from "./components/donate-content";
 
 export const metadata: Metadata = {
-  title:
-    "Donate to Green Thumb Foundation | Support Khadakwasla Dam Conservation",
+  title: "Donate | Invest in Pune's Water Security",
   description:
-    "Support our mission to restore Khadakwasla Dam and secure Pune's water future. Your donation helps fund crucial water conservation projects and environmental initiatives.",
+    "Your contribution directly funds excavator fuel, saplings, and maintenance. Support Green Thumb Foundation's tax-exempt efforts (80G) to desilt Khadakwasla Dam.",
   keywords: [
-    "donate",
-    "Green Thumb Foundation",
-    "Khadakwasla Dam",
-    "water conservation",
-    "environmental protection",
-    "Pune water security",
+    "Donate for Water Conservation India",
+    "Charity for Environmental Cause",
+    "80G Tax Benefit Donation",
+    "Support Green Thumb",
+    "Sponsor a Tree Pune",
   ],
   openGraph: {
-    title: "Donate to Green Thumb Foundation",
+    title: "Make a Difference Today | Support Green Thumb",
     description:
-      "Your support can make a difference in Pune's water future. Donate now to help restore Khadakwasla Dam.",
-    images: [
-      {
-        url: "/donate-og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Support Green Thumb Foundation's Water Conservation Efforts",
-      },
-    ],
+      "100% of your donation goes to the field. Help us remove silt and plant trees. Donate securely via Razorpay or Bank Transfer.",
+    url: "https://www.greenthumbfoundation.org/donate",
+    images: ["/donate-og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.greenthumbfoundation.org/donate",
   },
 };
 

@@ -2,31 +2,25 @@ import type { Metadata } from "next";
 import { ContactContent } from "./components/contact-content";
 
 export const metadata: Metadata = {
-  title: "Contact Green Thumb Foundation | Khadakwasla Dam Conservation",
+  title: "Contact Us | Volunteer, Visit, or Partner",
   description:
-    "Get in touch with Green Thumb Foundation. Join our efforts in Khadakwasla Dam restoration and water conservation in Pune. Your support can make a difference.",
+    "Reach out to Green Thumb Foundation. Whether you want to volunteer for a plantation drive, schedule a dam visit, or discuss CSR partnerships, we are here.",
   keywords: [
-    "contact Green Thumb Foundation",
-    "Khadakwasla Dam support",
-    "water conservation volunteer",
-    "Pune environmental projects",
-    "environmental conservation",
-    "sustainability initiatives",
-    "Green Thumb contact",
+    "Contact Green Thumb Pune",
+    "Volunteer for Nature",
+    "CSR Partnership Environmental NGO",
+    "Visit Khadakwasla Dam",
+    "NGO Office Address Pune",
   ],
   openGraph: {
-    title: "Contact Green Thumb Foundation | Join Our Conservation Efforts",
+    title: "Connect with the Cause | Green Thumb Foundation",
     description:
-      "Reach out to Green Thumb Foundation and be part of our mission to restore Khadakwasla Dam and secure Pune's water future.",
+      "Get in touch. Call us, email us, or find our headquarters. Let's work together for a water-secure future.",
     url: "https://www.greenthumbfoundation.org/contact",
-    images: [
-      {
-        url: "https://www.greenthumbfoundation.org/images/og-main.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Contact Green Thumb Foundation",
-      },
-    ],
+    images: ["/contact-og.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.greenthumbfoundation.org/contact",
   },
 };
 

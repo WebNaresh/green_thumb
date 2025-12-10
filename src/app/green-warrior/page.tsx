@@ -2,28 +2,25 @@ import type { Metadata } from "next";
 import { GreenWarriorGallery } from "./components/green-warrior-gallery";
 
 export const metadata: Metadata = {
-  title: "Green Warrior Booklet | Khadakwasla Dam Conservation Journey",
+  title: "Green Warrior | The Magazine of Environmental Guardians",
   description:
-    "Explore the Green Warrior booklet showcasing our Khadakwasla Dam conservation efforts. View news cuttings, recognition letters, and the impact of our water conservation projects in Pune.",
+    "Download the 'Green Warrior' booklet. A chronicle of our 25-year journey, filled with inspiring stories, volunteer testimonials, and the spirit of conservation.",
   keywords: [
-    "Green Warrior booklet",
-    "Khadakwasla Dam conservation",
-    "Pune water projects",
-    "environmental initiatives",
-    "Green Thumb Foundation achievements",
+    "Green Warrior Magazine",
+    "Environmental Educational Resources",
+    "Conservation Success Stories",
+    "Volunteer Manual",
+    "Green Thumb Publications",
   ],
   openGraph: {
-    title: "Green Warrior Booklet | Khadakwasla Dam Conservation Journey",
+    title: "Read 'Green Warrior' - Our Legacy in Print",
     description:
-      "Discover the story of Khadakwasla Dam conservation through our Green Warrior booklet. See the impact of our water projects in Pune.",
-    images: [
-      {
-        url: "https://www.greenthumbfoundation.org/pg-main.png",
-        width: 1200,
-        height: 630,
-        alt: "Green Warrior Booklet - Khadakwasla Dam Conservation",
-      },
-    ],
+      "Access our exclusive digital archive. Read the inspiring stories of the men and women behind the movement.",
+    url: "https://www.greenthumbfoundation.org/green-warrior",
+    images: ["/green-warrior-og.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.greenthumbfoundation.org/green-warrior",
   },
 };
 

@@ -2,32 +2,25 @@ import type { Metadata } from "next";
 import { ColonelPatilContent } from "./components/colonel-patil-content";
 
 export const metadata: Metadata = {
-  title: "Colonel Suresh Patil | Green Thumb Foundation",
+  title: "Colonel Suresh Patil | The Soldier Who Wages War on Drought",
   description:
-    "Discover the inspiring journey and impactful work of Colonel Suresh Patil, the visionary behind Green Thumb Foundation's Khadakwasla Dam conservation efforts.",
+    "Meet the visionary founder of Green Thumb. A retired army officer who traded his gun for a shovel to save Pune from water scarcity. Read his inspiring journey.",
   keywords: [
     "Colonel Suresh Patil",
-    "Green Thumb Foundation",
-    "Khadakwasla Dam",
-    "environmental conservation",
-    "water management",
-    "Pune",
+    "Green Thumb Founder",
+    "Water Man of Pune",
+    "Khadakwasla Dam Hero",
+    "Eco-Warrior Biography",
   ],
   openGraph: {
-    title: "Colonel Suresh Patil | Green Thumb Foundation",
+    title: "Colonel Suresh Patil: Protecting the Nation's Resources",
     description:
-      "Learn about Colonel Suresh Patil's dedication to environmental conservation and water management in Pune.",
+      "From the battlefield to the catchment area. Discover how Col. Patil's leadership transformed a dying dam into a thriving ecosystem.",
     url: "https://www.greenthumbfoundation.org/suresh-patil",
     images: ["/colonel-og.png"],
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@GreenThumbFound",
-    creator: "@GreenThumbFound",
-    title: "Colonel Suresh Patil | Green Thumb Foundation",
-    description:
-      "Learn about Colonel Suresh Patil's dedication to environmental conservation and water management in Pune.",
-    images: ["/colonel-og.png"],
+  alternates: {
+    canonical: "https://www.greenthumbfoundation.org/suresh-patil",
   },
 };
 

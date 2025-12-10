@@ -2,35 +2,32 @@ import type { Metadata } from "next";
 import { AboutContent } from "./components/about-content";
 
 export const metadata: Metadata = {
-  title: "About Green Thumb Foundation | Khadakwasla Dam Conservation",
+  title: "About Green Thumb | 25 Years of Environmental Impact",
   description:
-    "Discover Green Thumb Foundation's mission to restore Khadakwasla Dam and secure Pune's water future. Learn about our water conservation projects, achievements, and team.",
+    "Discover the story behind Green Thumb Foundation. From a retired Colonel's vision to a massive people's movement revitalizing Khadakwasla Dam since 1996.",
   keywords: [
-    "Green Thumb Foundation",
-    "Khadakwasla Dam restoration",
-    "Pune water conservation",
-    "environmental projects",
-    "dam desilting",
+    "Green Thumb History",
+    "Environmental NGO Impact",
+    "Colonel Suresh Patil Biography",
+    "Khadakwasla Dam Timeline",
+    "Pune Conservation Team",
   ],
   openGraph: {
-    title: "About Green Thumb Foundation | Khadakwasla Dam Conservation",
+    title: "Our Story: 28 Years, 2.5 Million+ Truckloads of Silt Removed",
     description:
-      "Learn about our mission to restore Khadakwasla Dam and secure Pune's water future through innovative conservation projects.",
-    images: [
-      {
-        url: "/about-og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Green Thumb Foundation - About Us",
-      },
-    ],
+      "Meet the team and the visionaries who turned a simple idea into Pune's largest citizen-led water conservation movement.",
+    url: "https://www.greenthumbfoundation.org/about",
+    images: ["/about-og.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.greenthumbfoundation.org/about",
   },
 };
 
 export default function AboutPage() {
-return(
-  <>
-  <AboutContent/>
-  </>
-)
+  return (
+    <>
+      <AboutContent />
+    </>
+  )
 }
