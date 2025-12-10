@@ -14,45 +14,53 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.greenthumbfoundation.org"),
   title: {
-    default: "Green Thumb Foundation | Khadakwasla Dam Conservation",
+    default: "Green Thumb Foundation | Khadakwasla Dam Conservation & Water Security",
     template: "%s | Green Thumb Foundation",
   },
   description:
-    "Green Thumb Foundation is dedicated to Khadakwasla Dam restoration and water conservation in Pune. Join our mission for a sustainable water future.",
+    "Join the movement to restore Pune's water lifeline. Green Thumb Foundation leads Khadakwasla Dam desilting, afforestation, and water conservation projects since 1996 under Col. Suresh Patil's vision.",
   keywords: [
     "Green Thumb Foundation",
-    "Khadakwasla Dam",
-    "water conservation",
-    "Pune",
-    "environmental conservation",
-    "dam desilting",
+    "Khadakwasla Dam Desilting",
+    "Water Conservation Pune",
+    "Colonel Suresh Patil",
+    "Environmental NGO India",
+    "Tree Plantation Pune",
+    "River Rejuvenation",
+    "CSR Opportunities Pune",
   ],
-  authors: [{ name: "Green Thumb Foundation" }],
+  authors: [{ name: "Green Thumb Foundation", url: "https://www.greenthumbfoundation.org" }],
   creator: "Green Thumb Foundation",
   publisher: "Green Thumb Foundation",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  manifest: "/site.webmanifest",
+  alternates: {
+    canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.greenthumbfoundation.org",
     siteName: "Green Thumb Foundation",
-    title: "Green Thumb Foundation | Khadakwasla Dam Conservation",
+    title: "Restoring Khadakwasla: The Fight for Pune's Water Security",
     description:
-      "Green Thumb Foundation is dedicated to Khadakwasla Dam restoration and water conservation in Pune. Join our mission for a sustainable water future.",
-    images: ["/og-hero.png"],
+      "A citizen-led movement to remove silt, plant trees, and secure water for millions. founded by Col. Suresh Patil. Be a Green Warrior today.",
+    images: [
+      {
+        url: "/og-main.jpg", // Ensure this exists or use a generic valid one
+        width: 1200,
+        height: 630,
+        alt: "Green Thumb Foundation Impact",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@GreenThumbFound",
     creator: "@GreenThumbFound",
-    title: "Green Thumb Foundation | Khadakwasla Dam Conservation",
+    title: "Green Thumb Foundation | Water Conservation",
     description:
-      "Green Thumb Foundation is dedicated to Khadakwasla Dam restoration and water conservation in Pune. Join our mission for a sustainable water future.",
-    images: ["/og-hero.png"],
+      "Restoring Khadakwasla Dam and securing Pune's water future. Join us.",
+    images: ["/og-main.jpg"],
   },
   robots: {
     index: true,

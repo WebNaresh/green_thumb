@@ -10,22 +10,25 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Green Thumb Foundation | Water Conservation & Khadakwasla Dam Restoration",
+    "Home | Green Thumb Foundation - Restoring Pune's Water Lifeline",
   description:
-    "Join Green Thumb Foundation in our mission to restore Khadakwasla Dam, Pune's lifeline. Learn about our water conservation efforts, dam desilting projects, and how you can contribute to securing Pune's water future.",
+    "We are revitalizing Khadakwasla Dam through desilting and afforestation. Join Colonel Suresh Patil and thousands of Green Warriors to secure water for future generations.",
   keywords: [
-    "Khadakwasla Dam",
-    "water conservation",
-    "Pune water security",
-    "dam desilting",
-    "environmental conservation",
-    "Green Thumb Foundation",
+    "Pune Water Crisis Solution",
+    "Volunteer Opportunities Pune",
+    "Donate for Water Conservation",
+    "Environmental Restoration Projects",
+    "NGO for Water",
   ],
   openGraph: {
-    title: "Green Thumb Foundation | Restoring Khadakwasla Dam",
+    title: "Green Thumb Foundation: Saving Khadakwasla, Saving Pune",
     description:
-      "Join our mission to secure Pune's water future through Khadakwasla Dam restoration and water conservation efforts.",
-    images: ["/export.png"],
+      "Witness the transformation of Khadakwasla Dam. See how we are turning barren land into green cover and boosting water capacity.",
+    images: ["/og-home.jpg"],
+    url: "https://www.greenthumbfoundation.org",
+  },
+  alternates: {
+    canonical: "https://www.greenthumbfoundation.org",
   },
 };
 
